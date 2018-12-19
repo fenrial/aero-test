@@ -1,0 +1,18 @@
+@mixin font($weight, $size)
+  font: $weight $size "GothamPro"
+
+@mixin background($path)
+  background-image: url("../images/" + $path)
+  background-repeat: no-repeat
+  background-position: center
+
+@mixin transition($properties: all, $duration: 300ms, $method: ease-in-out, $delay: 0ms)
+    $prefixes: -webkit- -moz- -ms- -o-;
+    @each $prefix in $prefixes
+        $value: ();
+        @each $property in $properties
+            @if length($value) > 0
+                $value: append($value, unquote(",") #{$property} $duration $method $delay);
+            @else
+                $value: append($value, #{$property} $duration $method $delay)
+        #{$prefix}transition: $value
