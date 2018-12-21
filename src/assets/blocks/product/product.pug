@@ -2,31 +2,31 @@ mixin product(data, mixClass)
 	.product(class=mixClass)
 		p.product__article= data.article
 		.product__image
-			img(src=data.image, alt=data.label).product__image-source
+			img(src=data.image, alt=data.title).product__image-source
 		.product__description
 			if data.status == "available"
 				p.product__status.product__status_available В наличии
 			else
 				p.product__status.product__status_not-available Не в наличии
-			p.product__title= data.label
+			p.product__title= data.title
 			.product__params-list
 				for param in data.params
 					.product__param
 						p.product__param
 						span.product__param-label= param.title + ": "
 						=param.value
-			.product__footer
-				.product__button.button.button_theme_blue
-					i.button__icon
-					p.button__text Купить
-				.product__controls
-					i.product__fav
-					i.product__comp
+		.product__footer
+			.product__button.button.button_theme_blue
+				i.button__icon.button__icon_basket
+				p.button__text Купить
+			.product__controls
+				i.product__fav
+				i.product__comp
 
 -
 	var products = 
 		{
-			label: "Canon PowerShot SX400 IS с улучшенной матрицей и объективом",
+			title: "Canon PowerShot SX400 IS с улучшенной матрицей и объективом",
 			article: "Арт. 34534345",
 			image: "assets/images/products/img-1.png",
 			status: "available",

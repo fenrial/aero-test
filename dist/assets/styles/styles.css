@@ -348,24 +348,6 @@ template {
   display: none;
 }
 
-html, body {
-  height: 100%;
-  min-height: 100%; }
-
-a {
-  text-decoration: none; }
-
-p {
-  margin: 0; }
-
-span {
-  outline: none; }
-
-input, textarea, button {
-  outline: none;
-  border: none;
-  padding: 0; }
-
 @font-face {
   font-family: 'ProximaNova';
   font-weight: 300;
@@ -384,6 +366,25 @@ input, textarea, button {
   font-style: normal;
   src: url(../fonts/ProximaNova_Semibold.ttf); }
 
+html, body {
+  height: 100%;
+  min-height: 100%;
+  background: #f7f7f7; }
+
+a {
+  text-decoration: none; }
+
+p {
+  margin: 0; }
+
+span {
+  outline: none; }
+
+input, textarea, button {
+  outline: none;
+  border: none;
+  padding: 0; }
+
 .container {
   max-width: 1280px;
   width: 100%;
@@ -391,22 +392,71 @@ input, textarea, button {
   padding: 0 10px;
   box-sizing: border-box; }
 
-.catalog {
-  background: #f7f7f7; }
-  .catalog__content {
-    padding: 10px 0;
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-gap: 10px; }
-  .catalog__list {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 10px; }
+.button {
+  height: 35px;
+  display: flex;
+  align-items: center;
+  font: 400 14px "ProximaNova";
+  letter-spacing: 0;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: background 0.2s ease-in-out 0ms;
+  -moz-transition: background 0.2s ease-in-out 0ms;
+  -ms-transition: background 0.2s ease-in-out 0ms;
+  -o-transition: background 0.2s ease-in-out 0ms; }
+
+.button__icon_basket {
+  width: 18px;
+  height: 17px;
+  display: block;
+  background-image: url(../images/icons/basket.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; }
+
+.button_theme_blue {
+  background: #0284c6;
+  color: white; }
+  .button_theme_blue:hover {
+    background: #0a608b; }
+
+.button_theme_light-grey {
+  background: #F8F8F8;
+  color: #333333; }
+  .button_theme_light-grey:hover {
+    background: #dfdfdf; }
+
+.catalog__content {
+  padding: 10px 0;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-gap: 10px; }
+
+.catalog__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px; }
+
+.catalog__filter {
+  padding: 30px 28px;
+  background: #ffffff; }
+
+.catalog__filter-button {
+  width: 100%;
+  justify-content: center;
+  font-weight: 300;
+  margin-bottom: 10px; }
+  .catalog__filter-button:last-child {
+    margin-bottom: 0; }
 
 .product {
   padding-top: 20px;
   padding-bottom: 31px;
-  background: white; }
+  background: white;
+  height: 590px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column; }
   .product__article {
     font: 400 11.8px "ProximaNova";
     color: #bfbfbf;
@@ -415,7 +465,11 @@ input, textarea, button {
     margin-bottom: 15px; }
   .product__description {
     padding-left: 23px;
-    padding-right: 50px; }
+    padding-right: 50px;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; }
   .product__image {
     width: 280px;
     height: 200px;
@@ -454,4 +508,38 @@ input, textarea, button {
     color: #4f4f4f; }
   .product__param-label {
     color: #9b9b9b; }
+  .product__footer {
+    margin-top: auto;
+    padding-left: 23px;
+    padding-right: 19px;
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 0; }
+  .product__button {
+    width: 101px;
+    justify-content: center; }
+    .product__button .button__icon {
+      margin-right: 10px; }
+  .product__controls {
+    display: flex;
+    align-items: center; }
+  .product__fav {
+    width: 19px;
+    height: 17px;
+    background-image: url(../images/icons/fav.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: block;
+    margin-right: 10.5px;
+    cursor: pointer; }
+  .product__comp {
+    width: 26px;
+    height: 26px;
+    background-image: url(../images/icons/scales.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: block;
+    cursor: pointer; }
 

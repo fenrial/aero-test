@@ -2,6 +2,10 @@
   padding-top: 20px
   padding-bottom: 31px
   background: white
+  height: 590px
+  box-sizing: border-box
+  display: flex
+  flex-direction: column
   
   &__article
     +font(400, 11.8px)
@@ -13,6 +17,10 @@
   &__description
     padding-left: 23px
     padding-right: 50px
+    height: 100%
+    box-sizing: border-box
+    display: flex
+    flex-direction: column
   
   &__image
     width: 280px
@@ -58,3 +66,39 @@
 
   &__param-label
     color: #9b9b9b
+  
+  &__footer
+    margin-top: auto
+    padding-left: 23px
+    padding-right: 19px
+    display: flex
+    justify-content: space-between
+    flex-shrink: 0
+  
+  &__button
+    width: 101px
+    justify-content: center
+
+    .button__icon
+      margin-right: 10px
+  
+  &__controls
+    display: flex
+    align-items: center
+
+  &__fav
+    width: 19px
+    height: 17px
+    +background("icons/fav.svg")
+    background-size: contain
+    display: block
+    margin-right: 10.5px
+    cursor: pointer
+  
+  &__comp
+    width: 26px
+    height: 26px
+    +background("icons/scales.png")
+    background-size: contain
+    display: block
+    cursor: pointer
