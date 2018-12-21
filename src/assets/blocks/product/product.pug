@@ -1,0 +1,51 @@
+mixin product(data, mixClass)
+	.product(class=mixClass)
+		p.product__article= data.article
+		.product__image
+			img(src=data.image, alt=data.label).product__image-source
+		.product__description
+			if data.status == "available"
+				p.product__status.product__status_available В наличии
+			else
+				p.product__status.product__status_not-available Не в наличии
+			p.product__title= data.label
+			.product__params-list
+				for param in data.params
+					.product__param
+						p.product__param
+						span.product__param-label= param.title + ": "
+						=param.value
+			.product__footer
+				.product__button.button.button_theme_blue
+					i.button__icon
+					p.button__text Купить
+				.product__controls
+					i.product__fav
+					i.product__comp
+
+-
+	var products = 
+		{
+			label: "Canon PowerShot SX400 IS с улучшенной матрицей и объективом",
+			article: "Арт. 34534345",
+			image: "assets/images/products/img-1.png",
+			status: "available",
+			params: [
+				{
+					title: "Физический размер",
+					value: "23.2 x 15.2 мм"
+				},
+				{
+					title: "Диафрагма",
+					value: "CMOS"
+				},
+				{
+					title: "Формат записи",
+					value: "RAW, JPEG, MP4 и другие"
+				},
+				{
+					title: "Фокусное расстояние",
+					value: "18-55 мм."
+				},
+			]
+		}
