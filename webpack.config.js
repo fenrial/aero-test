@@ -6,7 +6,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 
 let pathsToClean = [
@@ -46,6 +47,16 @@ const sass = {
 			loader: MiniCssExtractPlugin.loader,
 		},
 		'css-loader',
+		{
+			loader: 'postcss-loader',
+			options: {
+					plugins: [
+							autoprefixer({
+									browsers:['ie >= 10', 'last 2 version']
+							})
+					],
+				}
+		},
 		'sass-loader',
 	],
 }

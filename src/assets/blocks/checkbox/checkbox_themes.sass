@@ -1,0 +1,42 @@
+.checkbox_theme_blue
+  .checkbox
+    &__icon
+      box-shadow: inset 0 2px 2px 0 rgba(0, 0, 0, 0.07)
+      background-color: white
+      border: 1px solid #d7d7d7
+      +transition(box-shadow background-color, 0.2s)
+      display: flex
+      align-items: center
+      justify-content: center
+      box-sizing: border-box
+
+      &::after
+        content: ""
+        display: block
+        width: 10px
+        height: 8px
+        +background("checkbox/checkbox_marked.svg")
+        background-size: contain
+        opacity: 0
+        visibility: hidden
+        +transition(opacity visibility, 0.2s)
+
+    &__source:checked
+      ~ .checkbox__icon
+        box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.32)
+        background-color: $blue-light
+        border: none
+
+        &::after
+          opacity: 1
+          visibility: visible
+
+      ~ .checkbox__text
+        color: $blue-light
+
+    &__text
+      +font(300, 14px)
+      color: $grey-darker
+
+      &:hover
+        color: $blue-light

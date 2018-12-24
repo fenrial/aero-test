@@ -1,11 +1,33 @@
 include ../product/product
 
+mixin checkbox(label, mixClass, id)
+  .checkbox.checkbox_theme_blue(class=mixClass)
+    input(type="checkbox", name="filter-checkbox" id=id).checkbox__source
+    label(for=id).checkbox__icon
+    label(for=id).checkbox__text= label
+
+-
+  var producers = ["Canon", "Fujifilm", "Nikon", "Panasonic", "Leica", "Olympus", "Pentax", "Sigma", "General Electrix", "Zenit"]
+
 section.catalog
   .catalog__container.container
     .catalog__content
       .catalog__list
         - for(var i = 0; i < 3; i++)
-          +product(products, "catalog__product")
-      aside.catalog__filter
-        button.catalog__filter-button.catalog__filter-button_apply.button.button_theme_blue Показать результат
-        button.catalog__filter-button.catalog__filter-button_reset.button.button_theme_light-grey Очистить фильтр
+          +product(products, "catalog__product", i)
+      section.catalog__filter.filter
+        .filter__controls
+          button.filter__button.filter__button_apply.button.button_theme_blue Показать результат
+          button.filter__button.filter__button_reset.button.button_theme_light-grey Очистить фильтр
+        .filter__group
+          header.filter__group-title Производитель
+          .filter__list
+            - for(var i = 0; i < producers.length; i++)
+              if i < producers.length
+                +checkbox(producers[i], "filter__checkbox", "filter-checkbox-" + i)
+
+            //- .filter__list-col
+            //-   - for(var i = 0; i < producers.length; i++)
+            //-     if i >= producers.length / 2
+            //-       +checkbox(producers[i], "filter__checkbox", "filter-checkbox-" + i)
+

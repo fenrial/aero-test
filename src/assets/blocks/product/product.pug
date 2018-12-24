@@ -1,5 +1,5 @@
-mixin product(data, mixClass)
-	.product(class=mixClass)
+mixin product(data, mixClass, id)
+	.product(class=mixClass data-id=id)
 		p.product__article= data.article
 		.product__image
 			img(src=data.image, alt=data.title).product__image-source

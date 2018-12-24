@@ -12,7 +12,7 @@
       <div class="catalog__container container">
         <div class="catalog__content">
           <div class="catalog__list">
-                <div class="product catalog__product">
+                <div class="product catalog__product" data-id="0">
                   <p class="product__article">Арт. 34534345</p>
                   <div class="product__image"><img class="product__image-source" src="assets/images/products/img-1.png" alt="Canon PowerShot SX400 IS с улучшенной матрицей и объективом"/></div>
                   <div class="product__description">
@@ -40,7 +40,7 @@
                     <div class="product__controls"><i class="product__fav"></i><i class="product__comp"></i></div>
                   </div>
                 </div>
-                <div class="product catalog__product">
+                <div class="product catalog__product" data-id="1">
                   <p class="product__article">Арт. 34534345</p>
                   <div class="product__image"><img class="product__image-source" src="assets/images/products/img-1.png" alt="Canon PowerShot SX400 IS с улучшенной матрицей и объективом"/></div>
                   <div class="product__description">
@@ -68,7 +68,7 @@
                     <div class="product__controls"><i class="product__fav"></i><i class="product__comp"></i></div>
                   </div>
                 </div>
-                <div class="product catalog__product">
+                <div class="product catalog__product" data-id="2">
                   <p class="product__article">Арт. 34534345</p>
                   <div class="product__image"><img class="product__image-source" src="assets/images/products/img-1.png" alt="Canon PowerShot SX400 IS с улучшенной матрицей и объективом"/></div>
                   <div class="product__description">
@@ -97,14 +97,70 @@
                   </div>
                 </div>
           </div>
-          <aside class="catalog__filter">
-            <button class="catalog__filter-button catalog__filter-button_apply button button_theme_blue">Показать результат</button>
-            <button class="catalog__filter-button catalog__filter-button_reset button button_theme_light-grey">Очистить фильтр</button>
-          </aside>
+          <section class="catalog__filter filter">
+            <div class="filter__controls">
+              <button class="filter__button filter__button_apply button button_theme_blue">Показать результат</button>
+              <button class="filter__button filter__button_reset button button_theme_light-grey">Очистить фильтр</button>
+            </div>
+            <div class="filter__group">
+              <header class="filter__group-title">Производитель</header>
+              <div class="filter__list">
+                    <div class="checkbox checkbox_theme_blue filter__checkbox">
+                      <input class="checkbox__source" type="checkbox" name="filter-checkbox" id="filter-checkbox-0"/>
+                      <label class="checkbox__icon" for="filter-checkbox-0"></label>
+                      <label class="checkbox__text" for="filter-checkbox-0">Canon</label>
+                    </div>
+                    <div class="checkbox checkbox_theme_blue filter__checkbox">
+                      <input class="checkbox__source" type="checkbox" name="filter-checkbox" id="filter-checkbox-1"/>
+                      <label class="checkbox__icon" for="filter-checkbox-1"></label>
+                      <label class="checkbox__text" for="filter-checkbox-1">Fujifilm</label>
+                    </div>
+                    <div class="checkbox checkbox_theme_blue filter__checkbox">
+                      <input class="checkbox__source" type="checkbox" name="filter-checkbox" id="filter-checkbox-2"/>
+                      <label class="checkbox__icon" for="filter-checkbox-2"></label>
+                      <label class="checkbox__text" for="filter-checkbox-2">Nikon</label>
+                    </div>
+                    <div class="checkbox checkbox_theme_blue filter__checkbox">
+                      <input class="checkbox__source" type="checkbox" name="filter-checkbox" id="filter-checkbox-3"/>
+                      <label class="checkbox__icon" for="filter-checkbox-3"></label>
+                      <label class="checkbox__text" for="filter-checkbox-3">Panasonic</label>
+                    </div>
+                    <div class="checkbox checkbox_theme_blue filter__checkbox">
+                      <input class="checkbox__source" type="checkbox" name="filter-checkbox" id="filter-checkbox-4"/>
+                      <label class="checkbox__icon" for="filter-checkbox-4"></label>
+                      <label class="checkbox__text" for="filter-checkbox-4">Leica</label>
+                    </div>
+                    <div class="checkbox checkbox_theme_blue filter__checkbox">
+                      <input class="checkbox__source" type="checkbox" name="filter-checkbox" id="filter-checkbox-5"/>
+                      <label class="checkbox__icon" for="filter-checkbox-5"></label>
+                      <label class="checkbox__text" for="filter-checkbox-5">Olympus</label>
+                    </div>
+                    <div class="checkbox checkbox_theme_blue filter__checkbox">
+                      <input class="checkbox__source" type="checkbox" name="filter-checkbox" id="filter-checkbox-6"/>
+                      <label class="checkbox__icon" for="filter-checkbox-6"></label>
+                      <label class="checkbox__text" for="filter-checkbox-6">Pentax</label>
+                    </div>
+                    <div class="checkbox checkbox_theme_blue filter__checkbox">
+                      <input class="checkbox__source" type="checkbox" name="filter-checkbox" id="filter-checkbox-7"/>
+                      <label class="checkbox__icon" for="filter-checkbox-7"></label>
+                      <label class="checkbox__text" for="filter-checkbox-7">Sigma</label>
+                    </div>
+                    <div class="checkbox checkbox_theme_blue filter__checkbox">
+                      <input class="checkbox__source" type="checkbox" name="filter-checkbox" id="filter-checkbox-8"/>
+                      <label class="checkbox__icon" for="filter-checkbox-8"></label>
+                      <label class="checkbox__text" for="filter-checkbox-8">General Electrix</label>
+                    </div>
+                    <div class="checkbox checkbox_theme_blue filter__checkbox">
+                      <input class="checkbox__source" type="checkbox" name="filter-checkbox" id="filter-checkbox-9"/>
+                      <label class="checkbox__icon" for="filter-checkbox-9"></label>
+                      <label class="checkbox__text" for="filter-checkbox-9">Zenit</label>
+                    </div>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
     </section>
   </body>
-  <script src="assets/js/vendors~index.bundle.js"></script>
   <script src="assets/js/index.bundle.js"></script>
 </html>

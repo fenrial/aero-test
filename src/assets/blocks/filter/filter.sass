@@ -1,0 +1,40 @@
+.filter
+	&__controls
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+		margin-bottom: 25px
+
+	&__button
+		width: 100%
+		justify-content: center
+		font-weight: 300
+		margin-bottom: 10px
+
+		&:last-child
+			margin-bottom: 0
+	
+	&__group-title
+		+font(400, 17px)
+		color: $grey-darker
+		margin-bottom: 10px
+	
+	&__list
+		display: flex
+		flex-wrap: wrap
+		align-items: flex-start
+	
+	&__list-col
+		margin-right: 40px
+		
+	&__checkbox
+		margin-bottom: 10px
+		width: 45%
+		
+		&:last-child
+			margin-bottom: 0
+
+		.checkbox__icon
+			width: 13.5px
+			height: 14px
+			margin-right: 10px

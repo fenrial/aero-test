@@ -1,0 +1,16 @@
+{
+  "products": [
+    {
+      "isFav": false,
+      "id": 0
+    },
+    {
+      "isFav": false,
+      "id": 1
+    },
+    {
+      "isFav": true,
+      "id": 2
+    }
+  ]
+}

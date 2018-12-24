@@ -1,0 +1,17 @@
+.checkbox
+  display: flex
+  align-items: center
+
+  &__source
+    display: none
+  
+  &__icon
+    display: block
+    flex-shrink: 0
+    cursor: pointer
+  
+  &__text
+    +transition(color)
+    cursor: pointer
+
+@import "checkbox_themes"
