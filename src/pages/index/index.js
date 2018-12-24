@@ -12,22 +12,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
       let data = {};
       data.isFav = fav.classList.contains("product__fav_is-active") ? false : true;
-
       let json = JSON.stringify(data);
 
-      const xhr = new XMLHttpRequest();
-      xhr.open("PUT", `http://localhost:3000/products/${productID}`, true);
-      xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
-      xhr.onload = function () {
-        var resp = JSON.parse(xhr.responseText);
-        if (xhr.readyState == 4 && xhr.status == "200") {
-          fav.classList.toggle("product__fav_is-active")
-          console.log(resp);
-        } else {
-          console.error(xhr.status + ': ' + xhr.statusText);
-        }
-      }
-      xhr.send(json);
+      fetch(`http://localhost:3000/products/${productID}`, {
+        method: "PUT",
+        headers: {'Content-Type': 'application/json'},
+        body: json
+      })
+      .then(res => res.json())
+      .then(data => console.log(data))
+
+
+      // const xhr = new XMLHttpRequest();
+      // xhr.open("PUT", `http://localhost:3000/products/${productID}`, true);
+      // xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
+      // xhr.onload = function () {
+      //   var resp = JSON.parse(xhr.responseText);
+      //   if (xhr.readyState == 4 && xhr.status == "200") {
+      //     fav.classList.toggle("product__fav_is-active")
+      //     console.log(resp);
+      //   } else {
+      //     console.error(xhr.status + ': ' + xhr.statusText);
+      //   }
+      // }
+      // xhr.send(json);
     })
   })
 });

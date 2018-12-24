@@ -37,7 +37,13 @@ const pug = {
 };
 
 const babel = {
-	test: /\.js$/,exclude: /node_modules\/(?!(dom7|ssr-window|swiper)\/).*/, loader: "babel-loader" 
+	test: /\.js$/, 
+	use: {
+		loader: 'babel-loader',
+		options: {
+			presets: ['@babel/preset-env']
+		}
+	}
 }
 
 const sass = {

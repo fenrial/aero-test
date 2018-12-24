@@ -508,16 +508,12 @@ input, textarea, button {
 
 .catalog__content {
   padding: 10px 0;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 3fr 10px 1fr;
   grid-template-columns: 3fr 1fr;
   grid-gap: 10px; }
 
 .catalog__list {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 10px 1fr 10px 1fr;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px; }
 
