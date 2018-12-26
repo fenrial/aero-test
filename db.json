@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "isFav": true,
+      "isFav": false,
       "id": 0
     },
     {

@@ -1,13 +1,11 @@
 {
   "name": "aero-test",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack --watch --mode development",
-    "prod": "webpack --mode production",
-    "start:dev": "webpack-dev-server --output-public-path='dist' --open"
+    "dev": "concurrently \"json-server --watch db.json\" \"webpack --watch --mode development\"",
+    "prod": "webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -22,6 +20,7 @@
     "browser-sync": "^2.26.3",
     "browser-sync-webpack-plugin": "^2.2.2",
     "clean-webpack-plugin": "^1.0.0",
+    "concurrently": "^4.1.0",
     "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^1.0.1",
     "file-loader": "^2.0.0",
@@ -30,6 +29,7 @@
     "json-server": "^0.14.0",
     "mini-css-extract-plugin": "^0.4.4",
     "node-sass": "^4.10.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.4.0",
     "pug-html-loader": "^1.1.5",
@@ -42,5 +42,10 @@
   },
   "dependencies": {
     "autoprefixer": "^9.4.3"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/fenrial/aero-test/issues"
+  },
+  "homepage": "https://github.com/fenrial/aero-test#readme",
+  "description": ""
 }

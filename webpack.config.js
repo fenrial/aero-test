@@ -7,6 +7,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const autoprefixer = require('autoprefixer');
 
 
@@ -93,10 +94,25 @@ const images = {
 	}
 }
 
+const pageNames = ["index", "catalog"];
+
+const entries = {};
+
+pageNames.forEach(name => {
+	entries[name] = `./src/pages/${name}/${name}.js`;
+})
+
+const pages = pageNames.map((page) => {
+	return new HtmlWebpackPlugin({
+		filename: `${page}.html`,
+		template: `src/pages/${page}/${page}.pug`,
+		inject: false,
+ });
+});
+
+
 const config = {
-	entry: { 
-		index: './src/pages/index/index.js',
-	},
+	entry: entries,
 	output: {
 		path: path.resolve(__dirname, 'dist'),
 		filename: 'assets/js/[name].bundle.js',
@@ -105,18 +121,17 @@ const config = {
 	optimization: {
     splitChunks: {
       chunks: 'all',
-    },
+		},
+		minimizer: [
+      new OptimizeCSSAssetsPlugin()
+    ]
   },
 	module: {
 		rules: [pug, sass, fonts, babel, images],
 	},
 	plugins: [
 		new CleanWebpackPlugin(pathsToClean, cleanOptions),
-		new HtmlWebpackPlugin({
-			filename: 'index.html',
-			template: 'src/pages/index/index.pug',
-			inject: false,
-		}),
+		...pages,
 		new CopyWebpackPlugin([{ from: "./src/assets/images/", to: "./assets/images" } ]),
 		new MiniCssExtractPlugin({
       filename: 'assets/styles/styles.css',
@@ -134,5 +149,7 @@ const config = {
   //   port: 9000
   // },
 };
+
+
 
 module.exports = config;

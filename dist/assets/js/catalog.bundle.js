@@ -81,66 +81,16 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/******/ ({
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _assets_styles_styles_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _assets_styles_styles_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_assets_styles_styles_sass__WEBPACK_IMPORTED_MODULE_0__);
+/***/ 2:
+/***/ (function(module, exports) {
 
-document.addEventListener("DOMContentLoaded", function () {
-  var favButtons = document.querySelectorAll(".product__fav");
-  favButtons.forEach(function (button) {
-    button.addEventListener("click", function (e) {
-      var fav = e.target;
-      var product = e.target.closest(".product");
-      var productID = product.getAttribute("data-id");
-      var data = {};
-      data.isFav = fav.classList.contains("product__fav_is-active") ? false : true;
-      var json = JSON.stringify(data);
-      fetch("http://localhost:3000/products/".concat(productID), {
-        method: "PUT",
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: json
-      }).then(function (res) {
-        if (!res.ok) {
-          throw Error(res.statusText);
-        }
-
-        res.json();
-      }).then(function (product) {
-        fav.classList.toggle("product__fav_is-active");
-      }).catch(function (error) {
-        console.error(error);
-      });
-    });
-  });
-}); // closest polyfill
-
-(function (e) {
-  e.closest = e.closest || function (css) {
-    var node = this;
-
-    while (node) {
-      if (node.matches(css)) return node;else node = node.parentElement;
-    }
-
-    return null;
-  };
-})(Element.prototype);
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
+console.log("this is catalog");
 
 /***/ })
-/******/ ]);
+
+/******/ });

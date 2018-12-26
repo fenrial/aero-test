@@ -19,23 +19,18 @@ document.addEventListener("DOMContentLoaded", () => {
         headers: {'Content-Type': 'application/json'},
         body: json
       })
-      .then(res => res.json())
-      .then(data => console.log(data))
+      .then(res => {
+        if (!res.ok) {
+          throw Error(res.statusText);
+        }
 
-
-      // const xhr = new XMLHttpRequest();
-      // xhr.open("PUT", `http://localhost:3000/products/${productID}`, true);
-      // xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
-      // xhr.onload = function () {
-      //   var resp = JSON.parse(xhr.responseText);
-      //   if (xhr.readyState == 4 && xhr.status == "200") {
-      //     fav.classList.toggle("product__fav_is-active")
-      //     console.log(resp);
-      //   } else {
-      //     console.error(xhr.status + ': ' + xhr.statusText);
-      //   }
-      // }
-      // xhr.send(json);
+        res.json()
+      })
+      .then(product => {
+        fav.classList.toggle("product__fav_is-active");
+      }).catch(function(error) {
+        console.error(error);
+    });
     })
   })
 });
